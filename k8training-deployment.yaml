@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: k8-training-c2
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        label-key : k8-c2
+    spec:
+      containers:
+        - name: k8-training-c2
+          image: howieavp76/k8-training-c2
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
