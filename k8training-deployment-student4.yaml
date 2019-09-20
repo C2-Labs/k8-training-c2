@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: training-deployment-student4
+spec: 
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: training-student4
+  template: 
+    metadata: 
+      labels: 
+        app: training-student4
+    spec: 
+      containers: 
+        - 
+          image: howieavp76/k8-training-c2
+          name: training-student4
+          imagePullPolicy: Always
+          ports: 
+            - 
+              containerPort: 80
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service-label-key: service-k8-c2-student4
+  name: service-k8-c2-student4
+spec:
+  type: ClusterIP
+  ports:
+  - name: service-port-k8-c2-student4
+    port: 80
+    protocol: TCP
+  selector:
+    app: training-student4
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service-label-key: service-lb-k8-c2-student4
+  name: service-lb-k8-c2-student4
+spec:
+  type: LoadBalancer
+  ports:
+  - name: service-lb-k8-c2-student4
+    port: 80
+    protocol: TCP
+  selector:
+    app: training-student4
