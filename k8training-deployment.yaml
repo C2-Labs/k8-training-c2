@@ -1,19 +1,22 @@
-apiVersion: apps/v1 
-kind: Deployment 
+--- 
+apiVersion: apps/v1
+kind: Deployment
 metadata: 
-  name: training-deployment 
+  name: training-deployment
 spec: 
+  replicas: 3
   selector: 
     matchLabels: 
-      app: training 
-  replicas: 3 
+      app: training
   template: 
     metadata: 
       labels: 
-        app: training 
+        app: training
     spec: 
       containers: 
-      - name: training  
-        image: howieavp76/k8-training-c2 
-        ports: 
-        - containerPort: 80 
+        - 
+          image: howieavp76/k8-training-c2
+          name: training
+          ports: 
+            - 
+              containerPort: 80
