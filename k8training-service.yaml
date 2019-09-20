@@ -11,4 +11,4 @@ spec:
     port: 80
     protocol: TCP
   selector:
-    deployment-label-key: deployment-k8-c2
+    application: k8-training-c2
