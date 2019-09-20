@@ -2,15 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: k8-training-c2
+  labels: 
+    app: k8-training
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      app: k8-training
   template:
     metadata:
       labels:
-        application: k8-training-c2
-        version: "v1.0"
-        release: "r001"
-        stage: production
+        app: k8-training
     spec:
       containers:
         - name: k8-training-c2
