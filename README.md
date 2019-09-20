@@ -54,3 +54,15 @@ Deploy our demo app into the Kubernetes cluster in a highly available configurat
 8) On the services, find the external IP of the Load Balancer service in the console log
 9) Paste the IP into your browser to see the running app
 10) Do the #HappyDance if it worked
+
+# NOTES
+
+You can run into some tricky issues that are not well explained online or in any tutorials.  A few of these issues are shown below:
+
+1) Just deploying your container into pods won't work.  You have to create the load balancer service to externally expose the IP so you can reach it from outside the Kubernetes cluster.
+2) Not just any URL can be used to point at the YAML file.  In particular, you cannot use a GitHub link to provide the YAML file.  If you do, it throws the following error:
+
+` error: error parsing https://github.com/howieavp76/k8-training-c2/blob/master/k8training-deployment.yaml: error converting YAML to JSON: yaml: line 616: mapping values are not allowed in this context `
+
+3) This error appears to happen on any GitHub YAML related link.  Copying the same file to a S3 bucket or Azure blob resolves the issue.
+4) YAML formatting errors can be really hard to see and debug.  If your deploy fails due to a format/syntax issue, it can take forever to find it.  Online linting tools really help.  For example, you can go to [YAMLLINT](http:www.yamllint.com) for an online validator of your YAML format.
