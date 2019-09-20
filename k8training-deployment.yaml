@@ -7,7 +7,7 @@ spec:
   template:
     metadata:
       labels:
-        label-key : deployment-k8-c2
+        label-key: deployment-k8-c2
     spec:
       containers:
         - name: k8-training-c2
