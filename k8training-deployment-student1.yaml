@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: training-deployment
+  name: training-deployment-student1
 spec: 
   replicas: 3
   selector: 
