@@ -1,24 +1,167 @@
-<h1>Welcome to Kubernetes Training!</h1>
+<!-- Jumbotron Section -->
+<section id="intro-section" class="home-intro-section">
+  <div class="container" fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
+    <div fxFlex="50">
+      <h1 class="home-intro-title">Welcome to Your Hands-On Kubernetes Training!</h1>
+      <div class="home-intro-desc">
+        Delivered by the containerization and DevOps team from C2 Labs! <br />
+        Sandbox provided by Google Cloud Platform.
+      </div>
+      <div class="intro-list" fxLayout="column" fxLayoutGap="30px">
+        <div fxFlex="100">
+          <mat-icon color="accent">check</mat-icon><span fxFlex="20px"></span> Overview of the Kubernetes Landscape
+        </div>
+        <div fxFlex="100">
+          <mat-icon color="accent">check</mat-icon><span fxFlex="20px"></span> Detailed discusssions of Kubernetes terms
+          and concepts
+        </div>
+        <div fxFlex="100">
+          <mat-icon color="accent">check</mat-icon><span fxFlex="20px"></span> Hands on experience deploying
+          applications
+        </div>
+      </div>
+    </div>
+    <div fxFlex="50">
+      <div class="intro-product">
+        <img mat-card-image src="assets/kubernetes.png" [style.margin]="'0 !important'" style="width: 250px;">
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Agenda Cards -->
 <mat-card>
-    <mat-card-title>Agenda</mat-card-title>
-    <mat-card-subtitle>Below is the agenda for today's Kubernetes training.</mat-card-subtitle>
-    <mat-card-content>
-        <mat-list role="list">
-            <mat-list-item role="listitem">Session 1: Overview and Objectives</mat-list-item>
-            <mat-list-item role="listitem">Session 2: Kubernetes Concepts, Tools, and Alternatives</mat-list-item>
-            <mat-list-item role="listitem">Session 3: Kubernetes Components and Key Terms</mat-list-item>
-            <mat-list-item role="listitem">Lunch</mat-list-item>
-            <mat-list-item role="listitem">Afternoon: Hands On Labs</mat-list-item>
-          </mat-list>
-    </mat-card-content>
-    <mat-card-footer>
-        <h3>Resources</h3>
-        <mat-list role="list">
-            <mat-list-item role="listitem">PowerPoint Presentation</mat-list-item>
-            <mat-list-item role="listitem">Lab 1 - Intro to Kubernetes Cluster</mat-list-item>
-            <mat-list-item role="listitem">Lab 2 - Deploy Hello World App</mat-list-item>
-            <mat-list-item role="listitem">Lab 3 - Scaling, Monitoring, and Upgrading</mat-list-item>
-          </mat-list>
-    </mat-card-footer>
+  <mat-card-title>
+    Training Agenda
+  </mat-card-title>
+  <mat-card-subtitle>
+    <p>This training is designed as an all-day immersion session to become familiar with Kubernetes key concepts and
+      tools. The morning will provide an overview and instructor led demos. The afternoon will allow students to
+      demonstrate their knowledge by deploying and managing applications inside of a Kubernetes cluster.
+    </p>
+  </mat-card-subtitle>
+  <mat-card-content>
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
+      <div fxFlex="25">
+        <mat-card class="p-0 m-0">
+          <img mat-card-image src="assets/training.png">
+          <mat-card-content>
+            <h2><strong>Session One</strong></h2>
+            <p>
+              Overview, Objectives, and Class Introductions
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex="25">
+        <mat-card class="p-0 m-0">
+          <img mat-card-image src="assets/training.png">
+          <mat-card-content>
+            <h2><strong>Session Two</strong></h2>
+            <p>
+              Kubernetes Concepts Tools and Alternatives
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex="25">
+        <mat-card class="p-0 m-0">
+          <img mat-card-image src="assets/training.png">
+          <mat-card-content>
+            <h2><strong>Session Three</strong></h2>
+            <p>
+              Kubernetes Components and Key Terms
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex="25">
+        <mat-card class="p-0 m-0">
+          <img mat-card-image src="assets/training.png">
+          <mat-card-content>
+            <h2><strong>Session Four</strong></h2>
+            <p>
+              Lunch and Hands On Labs in the Afternoon
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card-content>
 </mat-card>
+
+<!-- Lab Cards -->
+<mat-card>
+  <mat-card-title>
+    Lab Agenda
+  </mat-card-title>
+  <mat-card-subtitle>
+    <p>The hands-on labs allow you to log into Google Cloud Platform (GCP) to run interactive commands on the cluster,
+      deploy applications into Kubernetes pods, manage services, and perform commands to scale, upgrade, and monitor
+      the cluster.
+    </p>
+  </mat-card-subtitle>
+  <mat-card-content>
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
+      <div fxFlex="25">
+        <mat-card class="p-0 m-0">
+          <img mat-card-image src="assets/lab.jpg">
+          <mat-card-content>
+            <h2><strong>Lab One</strong></h2>
+            <p>
+              Preparation Work
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex="25">
+        <mat-card class="p-0 m-0">
+          <img mat-card-image src="assets/lab.jpg">
+          <mat-card-content>
+            <h2><strong>Lab Two</strong></h2>
+            <p>
+              Managing and Monitoring the Kubernetes Cluster
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex="25">
+        <mat-card class="p-0 m-0">
+          <img mat-card-image src="assets/lab.jpg">
+          <mat-card-content>
+            <h2><strong>Lab Three</strong></h2>
+            <p>
+              Deploy Example Application to the Kubernetes Cluster
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex="25">
+        <mat-card class="p-0 m-0">
+          <img mat-card-image src="assets/lab.jpg">
+          <mat-card-content>
+            <h2><strong>Lab Four</strong></h2>
+            <p>
+              Scale, Upgrade, and Monitor Your Application
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- Call Out Banner -->
+<section class="home-section home-cta">
+  <div class="container">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap="nowrap" fxLayoutGap="20px">
+      <div fxFlex="66.666">
+        <h2>Enjoying Your Training?</h2>
+        <p>C2 Labs blends ART and SCIENCE to help our clients take back control in the next generation digital economy.  Interested in how C2 Lab can accelerate your digital transformation journey?</p>
+      </div>
+      <div fxFlex="33.333" fxLayoutAlign="center center">
+        <button mat-raised-button mat-lg-button color="accent"  onclick="window.location.href = 'https://www.c2labs.com/contact-us';">Contact Us</button>
+      </div>
+    </div>
+  </div>
+</section>
