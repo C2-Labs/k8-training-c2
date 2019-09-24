@@ -13,9 +13,9 @@ This project was was created to provide a test container and set of deployment s
 
 - ng build --prod //compiles the Angular app to static code in the /dist folder
 - docker image build -t howieavp76/k8-training-c2 . //builds the Docker image
-- docker image build -t howieavp76/k8-training-c2:v1.1 //builds with a tag name
+- docker image build -t howieavp76/k8-training-c2:v1.1 . //builds with a tag name
 - docker push howieavp76/k8-training-c2 //push to docker hub image repository
-- docker run -p 3000:80 --rm k8-training-c2 //runs the Docker container
+- docker run -p 3000:80 k8-training-c2:v1.1 //runs the Docker container with the specified tag
 
 **NOTE: Login first to Docker Hub**
 
@@ -55,6 +55,27 @@ Deploy our demo app into the Kubernetes cluster in a highly available configurat
 8) On the services, find the external IP of the Load Balancer service in the console log
 9) Paste the IP into your browser to see the running app
 10) Do the #HappyDance if it worked
+
+### Step 3
+
+Upgrade the container image to use the latest version:
+
+`
+kubectl set image deployment/training-deployment training=howieavp76/k8-training-c2:v2.0
+
+### Step 4
+
+Scale the deployment up to handle the increased anticipated load
+
+`
+kubectl scale deployment training-deployment --replicas=5
+`
+
+Scale the deployment down to handle steady state traffic now that the surge is over.
+
+`
+kubectl scale deployment training-deployment --replicas=1
+`
 
 # NOTES
 
