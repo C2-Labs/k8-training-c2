@@ -21,6 +21,8 @@ This project was was created to provide a test container and set of deployment s
 
 - docker login --username=howieavp76
 
+https://atlasc2.blob.core.windows.net/kub8-c2labs/k8training-deployment-student12.yaml
+
 # Deployment
 
 The deployment will be done by executing kubectl commands inside the Google Cloud Shell.  The steps are as follows:
@@ -36,13 +38,13 @@ Log into Kubernetes Engine on Google Cloud Platform:
 5) Click "Run in Cloud Shell" to open the CLI prompt
 6) If prompted, click "Start Cloud Shell"
 7) It should load a command to start the shell, press Enter to execute the command
-8) You should not have interactive login to Google Cloud and the Kubernetes cluster
+8) You should now have interactive login to Google Cloud and the Kubernetes cluster
 
 ### Step 2
 
 Deploy our demo app into the Kubernetes cluster in a highly available configuration with 3 nodes:
 
-1) Access the deployment at https://atlasc2.blob.core.windows.net/kub8-c2labs/k8training-deployment.yaml
+1) Access the deployment configuration file at https://atlasc2.blob.core.windows.net/kub8-c2labs/k8training-deployment.yaml
 2) Each student will have their own file; for example; https://atlasc2.blob.core.windows.net/kub8-c2labs/k8training-deployment-student1.yaml
 3) We will number off in class and you will grab the appropriate file for your number (up to 12 available)
 4) Execute the following command in Google Cloud Shell: kubectl apply -f https://atlasc2.blob.core.windows.net/kub8-c2labs/k8training-deployment-student#.yaml
@@ -51,17 +53,18 @@ Deploy our demo app into the Kubernetes cluster in a highly available configurat
     - Service - allows internal traffic in the cluster
     - Load Balancer Service - creates external IP and load balances requests evenly across the pods created
 6) Verify your pods are running: kubectl get pods
-7) Verify your services are running: kubectl ger services
+7) Verify your services are running: kubectl get services
 8) On the services, find the external IP of the Load Balancer service in the console log
 9) Paste the IP into your browser to see the running app
 10) Do the #HappyDance if it worked
 
 ### Step 3
 
-Upgrade the container image to use the latest version:
+Upgrade the container image to use the 2.0 version:
 
 `
 kubectl set image deployment/training-deployment training=howieavp76/k8-training-c2:v2.0
+`
 
 ### Step 4
 
@@ -71,11 +74,13 @@ Scale the deployment up to handle the increased anticipated load
 kubectl scale deployment training-deployment --replicas=5
 `
 
-Scale the deployment down to handle steady state traffic now that the surge is over.
+Scale the deployment down to handle steady state traffic now that the surge is over
 
 `
-kubectl scale deployment training-deployment --replicas=1
+kubectl scale deployment training-deployment --replicas=3
 `
+
+NOTE: Do not set the number of replicas below 3.  This will violate the minimum availability requirement and you will see a warning in GCP.
 
 # NOTES
 
@@ -88,3 +93,4 @@ You can run into some tricky issues that are not well explained online or in any
 
 3) This error appears to happen on any GitHub YAML related link.  Copying the same file to a S3 bucket or Azure blob resolves the issue.
 4) YAML formatting errors can be really hard to see and debug.  If your deploy fails due to a format/syntax issue, it can take forever to find it.  Online linting tools really help.  For example, you can go to [YAMLLINT](http:www.yamllint.com) for an online validator of your YAML format.
+5) In the Google Cloud Shell, if you paste commands they sometimes execute immediately or do not work as intended.  Sometimes just retyping them removes some weird special characters or spacing that gets inserted on a paste.
