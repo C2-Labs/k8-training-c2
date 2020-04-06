@@ -9,17 +9,17 @@ This project was was created to provide a test container and set of deployment s
 - Upgrade and scale the application via configuration
 - Observe various kubectl commands and monitoring capabilities built into the platform
 
-## Docker Build
+## Example Docker Build
+
+Examples below are shown using my howieavp76 Docker Hub account:
 
 - ng build --prod //compiles the Angular app to static code in the /dist folder
 - docker image build -t howieavp76/k8-training-c2 . //builds the Docker image
 - docker image build -t howieavp76/k8-training-c2:v1.1 . //builds with a tag name
 - docker push howieavp76/k8-training-c2 //push to docker hub image repository
-- docker run -p 3000:80 k8-training-c2:v1.1 //runs the Docker container with the specified tag
+- docker run -p 3000:80 howieavp76/k8-training-c2:v1.1 //runs the Docker container with the specified tag
 
 **NOTE: Login first to Docker Hub**
-
-- docker login --username=howieavp76
 
 https://atlasc2.blob.core.windows.net/kub8-c2labs/k8training-deployment-student12.yaml
 
