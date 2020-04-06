@@ -1,5 +1,5 @@
 {
-  "name": "entergy-demo",
+  "name": "c2labs_k8s_training",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -28,7 +28,7 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.900.1",
+    "@angular-devkit/build-angular": "^0.803.24",
     "@angular/cli": "~8.3.3",
     "@angular/compiler-cli": "~8.2.4",
     "@angular/language-service": "~8.2.4",
